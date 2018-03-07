@@ -30,12 +30,12 @@
     <!-- Styling -->
     <div>
       <label>
-        <input v-model="backgroundColour"> Background Colour
+        <input v-model="backgroundColor"> Background Color
       </label>
     </div>
     <div>
       <label>
-        <input v-model="borderColour"> Border Colour
+        <input v-model="borderColor"> Border Color
       </label>
     </div>
     <div>
@@ -51,12 +51,18 @@
     </div>
     <div>
       <label>
-        <input v-model="fontColour"> Font Colour
+        <input v-model="fontColor"> Font Color
       </label>
     </div>
     <div>
       <label>
         <input v-model.number="fontSize" type="number"> Font Size (px)
+      </label>
+    </div>
+    <!-- External Styling -->
+    <div>
+      <label>
+        <input v-model="class"> CSS Class Name
       </label>
     </div>
     <!-- Image Placeholder -->
@@ -67,12 +73,13 @@
         :percentHeight="percentHeight"
         :height="height"
         :show-ratio="showRatio"
-        :background-colour="backgroundColour"
-        :border-colour="borderColour"
+        :background-color="backgroundColor"
+        :border-color="borderColor"
         :border-width="borderWidth"
         :font-family="fontFamily"
-        :font-colour="fontColour"
+        :font-color="fontColor"
         :font-size="fontSize"
+        :class="mycustomclass"
       ></image-placeholder>
     </div>
   </div>
@@ -90,11 +97,11 @@ export default {
       percentWidth: false,
       percentHeight: false,
       showRatio: false,
-      backgroundColour: '#eee',
+      backgroundColor: '#eee',
       borderWidth: 1,
-      borderColour: '#ccc',
+      borderColor: '#ccc',
       fontFamily: 'Helvetica, sans-serif',
-      fontColour: '#333',
+      fontColor: '#333',
       fontSize: 14
     }
   }

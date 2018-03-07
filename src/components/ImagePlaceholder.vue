@@ -1,7 +1,7 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" :width="imgWidth" :height="imgHeight">
+  <svg xmlns="http://www.w3.org/2000/svg" :width="imgWidth" :height="imgHeight" :class="className">
     <rect :width="rectWidth" :height="rectHeight" :style="imgStyle"/>
-    <text x="50%" y="50%" :font-size="fontSize" :font-family="fontFamily" :fill="fontColour" text-anchor="middle" alignment-baseline="middle">
+    <text x="50%" y="50%" :font-size="fontSize" :font-family="fontFamily" :fill="fontColor" text-anchor="middle" alignment-baseline="middle">
       <slot>{{ displayText }}</slot>
     </text>
   </svg>
@@ -10,6 +10,7 @@
 <script>
 export default {
   props: {
+    class: String,
     width: {
       type: Number,
       default: 200
@@ -20,11 +21,11 @@ export default {
     },
     percentWidth: Boolean,
     percentHeight: Boolean,
-    backgroundColour: {
+    backgroundColor: {
       type: String,
       default: '#ccc'
     },
-    borderColour: {
+    borderColor: {
       type: String,
       default: '#333'
     },
@@ -40,7 +41,7 @@ export default {
       type: String,
       default: 'monospace, sans-serif'
     },
-    fontColour: {
+    fontColor: {
       type: String,
       default: '#333'
     },
@@ -55,12 +56,18 @@ export default {
      */
     imgStyle () {
       return {
-        fill: this.backgroundColour,
-        outlineColor: this.borderColour,
+        fill: this.backgroundColor,
+        outlineColor: this.borderColor,
         outlineStyle: 'solid',
         outlineWidth: this.borderWidth + 'px',
         outlineOffset: (this.borderWidth * -1) + 'px'
       }
+    },
+    /**
+     * @return {String}
+     */
+    className () {
+      return this.class ? '' : this.class
     },
     /**
      * @return {String}

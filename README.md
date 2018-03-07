@@ -19,13 +19,14 @@ Basic
 <image-placeholder
     :width="200"
     :height="200"
-    :background-colour="#ddd"
-    :border-colour="#000"
+    :background-color="#ddd"
+    :border-color="#000"
     :border-width="2"
     :show-ratio="true"
     :font-family="Tahoma, sans-serif"
-    :font-colour="#333"
+    :font-color="#333"
     :font-size="18"
+    :class="mycustomclass"
 ></image-placeholder>
 ```
 
@@ -43,10 +44,11 @@ Alternatively you can provide your own text.
 |------------------|--------|---------|----------|
 |width             |Number  |200      |Img width |
 |height            |Number  |150      |Img height|
-|backgroundColour  |String  |#ccc     |Background colour|
-|borderColour      |String  |#333     |Border colour|
+|backgroundColor   |String  |#ccc     |Background color|
+|borderColor       |String  |#333     |Border color|
 |borderWidth       |Number  |1        |Border width|
 |showRatio         |Boolean |false    |Show image size in pixels or the proportion ratio|
 |fontFamily        |String  |monospace|Font for the display text|
-|fontColour        |String  |#333     |Display text colour|
+|fontColor         |String  |#333     |Display text color|
 |fontSize          |Number  |14       |Display text size|
+|class             |String  |         |Add a custom css classname like img-round, etc if you need|
